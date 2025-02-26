@@ -364,3 +364,4 @@ export default function Chat({ prompt }: { prompt: PromptStructure | null }) {
 4. Enhance the filtering system
 5. Implement server-side API key storage for production
 6. Create new AI tools to extend system capabilities
+# agent-tips2

@@ -41,6 +41,7 @@ export default function RootLayout({
                 <div className="fixed top-0 left-0 right-0 z-50 flex justify-center p-2 bg-background/80 backdrop-blur-sm border-b">
                   <nav className="flex gap-4">
                     <Link href="/" className="text-sm hover:underline">Home</Link>
+                    <Link href="/learn" className="text-sm hover:underline">Learn</Link>
                     <Link href="/showcase" className="text-sm hover:underline">Component Showcase</Link>
                   </nav>
                 </div>

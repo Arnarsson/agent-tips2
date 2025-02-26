@@ -1,0 +1,43 @@
+{
+  "description": "Cursor rules for the Agent.tips project.",
+  "rules": [
+    {
+      "pattern": "**/*.tsx",
+      "instructions": [
+        "Use functional components with TypeScript interfaces.",
+        "Follow Next.js conventions for file structure and component creation.",
+        "Incorporate Tailwind CSS classes for styling.",
+        "Utilize Jotai for state management.",
+        "Implement AES encryption for handling API keys.",
+        "Ensure all code adheres to the project's coding standards and best practices."
+      ]
+    },
+    {
+      "pattern": "**/*.ts",
+      "instructions": [
+        "Follow TypeScript best practices.",
+        "Use ES6 modules and syntax.",
+        "Ensure all functions are pure and have defined return types.",
+        "Incorporate error handling for all asynchronous operations.",
+        "Adhere to the project's coding standards and guidelines."
+      ]
+    },
+    {
+      "pattern": "**/*.css",
+      "instructions": [
+        "Prefer using Tailwind CSS classes over custom styles.",
+        "If custom styles are necessary, ensure they do not conflict with Tailwind's utility classes.",
+        "Maintain consistency with the project's design system."
+      ]
+    },
+    {
+      "pattern": "**/*.md",
+      "instructions": [
+        "Maintain clear and concise documentation.",
+        "Use proper Markdown syntax and structure.",
+        "Ensure all code snippets are properly formatted and highlighted.",
+        "Adhere to the project's documentation standards."
+      ]
+    }
+  ]
+}

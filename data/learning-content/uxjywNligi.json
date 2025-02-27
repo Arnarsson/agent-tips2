@@ -1,0 +1,21 @@
+{
+  "title": "Home - Anthropic",
+  "url": "https://docs.anthropic.com/claude/docs/prompting-techniques",
+  "sourceName": "docs.anthropic.com",
+  "sourceUrl": "https://docs.anthropic.com",
+  "content": [],
+  "metadata": {
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "techniques",
+      "best practices"
+    ],
+    "estimatedReadTime": 1,
+    "dateScraped": "2025-02-27T13:33:11.921Z"
+  },
+  "id": "uxjywNligi",
+  "slug": "home-anthropic",
+  "examples": [],
+  "exercises": []
+}

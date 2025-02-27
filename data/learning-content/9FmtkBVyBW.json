@@ -1,0 +1,17 @@
+{
+  "title": "Optimizing LLMs for Speed and Memory",
+  "url": "https://huggingface.co/docs/transformers/main/llm_tutorial_optimization",
+  "sourceName": "Hugging Face",
+  "sourceUrl": "https://huggingface.co",
+  "content": [],
+  "metadata": {
+    "difficulty": "beginner",
+    "topics": [],
+    "estimatedReadTime": 1,
+    "dateScraped": "2025-02-27T13:09:34.154Z"
+  },
+  "id": "9FmtkBVyBW",
+  "slug": "optimizing-llms-for-speed-and-memory",
+  "examples": [],
+  "exercises": []
+}

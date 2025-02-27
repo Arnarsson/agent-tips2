@@ -1,0 +1,95 @@
+{
+  "title": "Transformers Generation with LLMs",
+  "url": "https://huggingface.co/docs/transformers/main/llm_tutorial",
+  "sourceName": "Hugging Face",
+  "sourceUrl": "https://huggingface.co",
+  "content": [
+    {
+      "heading": "Generate text",
+      "paragraphs": [
+        "A language model trained for causal language modeling takes a sequence of text tokens as input and returns the probability distribution for the next token.",
+        "A critical aspect of autoregressive generation with LLMs is how to select the next token from this probability distribution. Anything goes in this step as long as you end up with a token for the next iteration. This means it can be as simple as selecting the most likely token from the probability distribution or as complex as applying a dozen transformations before sampling from the resulting distribution.",
+        "The process depicted above is repeated iteratively until some stopping condition is reached. Ideally, the stopping condition is dictated by the model, which should learn when to output an end-of-sequence (EOS) token. If this is not the case, generation stops when some predefined maximum length is reached.",
+        "Properly setting up the token selection step and the stopping condition is essential to make your model behave as you’d expect on your task. That is why we have a GenerationConfig file associated with each model, which contains a good default generative parameterization and is loaded alongside your model.",
+        "Let’s talk code!",
+        "If you’re interested in basic LLM usage, our high-level Pipeline interface is a great starting point. However, LLMs often require advanced features like quantization and fine control of the token selection step, which is best done through generate(). Autoregressive generation with LLMs is also resource-intensive and should be executed on a GPU for adequate throughput.",
+        "First, you need to load the model.",
+        "You’ll notice two flags in the from_pretrained call:",
+        "There are other ways to initialize a model, but this is a good baseline to begin with an LLM.",
+        "Next, you need to preprocess your text input with a tokenizer.",
+        "The model_inputs variable holds the tokenized text input, as well as the attention mask. While generate() does its best effort to infer the attention mask when it is not passed, we recommend passing it whenever possible for optimal results.",
+        "After tokenizing the inputs, you can call the generate() method to returns the generated tokens. The generated tokens then should be converted to text before printing.",
+        "Finally, you don’t need to do it one sequence at a time! You can batch your inputs, which will greatly improve the throughput at a small latency and memory cost. All you need to do is to make sure you pad your inputs properly (more on that below).",
+        "And that’s it! In a few lines of code, you can harness the power of an LLM."
+      ]
+    },
+    {
+      "heading": "Common pitfalls",
+      "paragraphs": [
+        "There are many generation strategies, and sometimes the default values may not be appropriate for your use case. If your outputs aren’t aligned with what you’re expecting, we’ve created a list of the most common pitfalls and how to avoid them."
+      ]
+    },
+    {
+      "heading": "Generated output is too short/long",
+      "paragraphs": [
+        "If not specified in the GenerationConfig file, generate returns up to 20 tokens by default. We highly recommend manually setting max_new_tokens in your generate call to control the maximum number of new tokens it can return. Keep in mind LLMs (more precisely, decoder-only models) also return the input prompt as part of the output."
+      ]
+    },
+    {
+      "heading": "Incorrect generation mode",
+      "paragraphs": [
+        "By default, and unless specified in the GenerationConfig file, generate selects the most likely token at each iteration (greedy decoding). Depending on your task, this may be undesirable; creative tasks like chatbots or writing an essay benefit from sampling. On the other hand, input-grounded tasks like audio transcription or translation benefit from greedy decoding. Enable sampling with do_sample=True, and you can learn more about this topic in this blog post."
+      ]
+    },
+    {
+      "heading": "Wrong padding side",
+      "paragraphs": [
+        "LLMs are decoder-only architectures, meaning they continue to iterate on your input prompt. If your inputs do not have the same length, they need to be padded. Since LLMs are not trained to continue from pad tokens, your input needs to be left-padded. Make sure you also don’t forget to pass the attention mask to generate!"
+      ]
+    },
+    {
+      "heading": "Wrong prompt",
+      "paragraphs": [
+        "Some models and tasks expect a certain input prompt format to work properly. When this format is not applied, you will get a silent performance degradation: the model kinda works, but not as well as if you were following the expected prompt. More information about prompting, including which models and tasks need to be careful, is available in this guide. Let’s see an example with a chat LLM, which makes use of chat templating:"
+      ]
+    },
+    {
+      "heading": "Further resources",
+      "paragraphs": [
+        "While the autoregressive generation process is relatively straightforward, making the most out of your LLM can be a challenging endeavor because there are many moving parts. For your next steps to help you dive deeper into LLM usage and understanding:"
+      ]
+    }
+  ],
+  "metadata": {
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "estimatedReadTime": 4,
+    "dateScraped": "2025-02-27T13:31:09.819Z"
+  },
+  "id": "nXLvBqjgSn",
+  "slug": "transformers-generation-with-llms",
+  "examples": [],
+  "exercises": [
+    {
+      "id": "8K5VcbASfy",
+      "title": "Multiple Choice: Generate text",
+      "description": "Select the most appropriate option for this prompt engineering scenario.",
+      "type": "multiple-choice",
+      "question": "Which of the following is the most effective prompt?",
+      "options": [
+        "time a at sequence one it do to need don’t you Finally,",
+        "Finally, you don’t need to do it one sequence at a time",
+        "Finally, you don’t need to basically do it one sequence at a time",
+        "time a at sequence one it do to need don’t you Finally,"
+      ],
+      "correctAnswer": "Finally, you don’t need to do it one sequence at a time"
+    }
+  ]
+}

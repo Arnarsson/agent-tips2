@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "outDir": "dist",
+    "noEmit": false,
+    "strict": false,
+    "downlevelIteration": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "paths": {
+      "@/*": ["../*"]
+    }
+  },
+  "include": ["./**/*.ts"],
+  "exclude": ["../node_modules"]
+} 

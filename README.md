@@ -364,4 +364,73 @@ export default function Chat({ prompt }: { prompt: PromptStructure | null }) {
 4. Enhance the filtering system
 5. Implement server-side API key storage for production
 6. Create new AI tools to extend system capabilities
-# agent-tips2
+
+## Prompt Engineering Academy
+
+The Prompt Engineering Academy is an integrated learning platform that helps users master prompt engineering techniques. The academy content is automatically populated through our web scraping infrastructure.
+
+### Web Scraping Infrastructure
+
+Our scraping system automatically collects high-quality prompt engineering content from trusted sources:
+
+1. **Core Components**:
+   - `lib/scraper/core.ts`: Core scraping functionality
+   - `lib/scraper/sources.ts`: Defines sources for scraping
+   - `lib/scraper/transform.ts`: Transforms scraped content into learning content
+   - `lib/scraper/storage.ts`: Handles persistence of content
+
+2. **Available Sources**:
+   - Anthropic
+   - OpenAI
+   - Wikipedia
+   - Hugging Face (specialized documentation on LLMs and prompt engineering)
+
+3. **Running the Scrapers**:
+   - Scrape all sources: `npm run scrape`
+   - Scrape a specific source: `npm run scrape:source [sourceName]`
+   - Scrape Hugging Face: `npm run scrape:huggingface`
+
+4. **Custom Transformers**:
+   - The system includes specialized transformers for sources like Hugging Face that require custom content extraction
+
+5. **Content Structure**:
+   - Scraped content is transformed into learning sections with examples and exercises
+   - All content is stored as JSON files in the `data` directory
+
+### Extending the Scraping System
+
+To add a new source:
+
+1. Define a new source configuration in `lib/scraper/sources.ts`
+2. If needed, create a custom transformer in `lib/scraper/transform.ts`
+3. Optionally create a dedicated script in the `scripts` directory
+4. Add the new script command to `package.json`
+
+Example for custom source implementation:
+```typescript
+// Add to lib/scraper/sources.ts
+export const CustomSource: Source = {
+  name: 'Custom Source',
+  baseUrl: 'https://example.com',
+  urls: [
+    {
+      url: 'https://example.com/page1',
+      selector: '.main-content',
+      metadata: {
+        difficulty: 'beginner',
+        topics: ['introduction', 'basics'],
+      },
+    },
+    // Add more URLs as needed
+  ],
+};
+
+// Don't forget to add to AllSources
+export const AllSources = [
+  AnthropicSource,
+  OpenAISource,
+  WikipediaSource,
+  HuggingFaceSource,
+  CustomSource,
+];
+```

@@ -1,0 +1,190 @@
+{
+  "title": "Prompt engineering - Wikipedia",
+  "url": "https://en.wikipedia.org/wiki/Prompt_engineering",
+  "sourceName": "en.wikipedia.org",
+  "sourceUrl": "https://en.wikipedia.org",
+  "content": [
+    {
+      "heading": "History",
+      "paragraphs": [
+        "Prompt engineering is the process of structuring or crafting an instruction in order to produce the best possible output from a generative artificial intelligence (AI) model.[1]",
+        "A prompt is natural language text describing the task that an AI should perform.[2] A prompt for a text-to-text language model can be a query, a command, or a longer statement including context, instructions, and conversation history. Prompt engineering may involve phrasing a query, specifying a style, choice of words and grammar,[3] providing relevant context, or describing a character for the AI to mimic.[1]",
+        "When communicating with a text-to-image or a text-to-audio model, a typical prompt is a description of a desired output such as \"a high-quality photo of an astronaut riding a horse\"[4] or \"Lo-fi slow BPM electro chill with organic samples\".[5] Prompting a text-to-image model may involve adding, removing, emphasizing, and re-ordering words to achieve a desired subject, style,[6] layout, lighting,[7] and aesthetic.",
+        "In 2018, researchers first proposed that all previously separate tasks in natural language processing (NLP) could be cast as a question-answering problem over a context. In addition, they trained a first single, joint, multi-task model that would answer any task-related question like \"What is the sentiment\" or \"Translate this sentence to German\" or \"Who is the president?\"[8]",
+        "The AI boom saw an increase in the amount of \"prompting technique\" to get the model to output the desired outcome and avoid nonsensical output, a process characterized by trial-and-error.[9] After the release of ChatGPT in 2022, prompt engineering was soon seen as an important business skill, albeit one with an uncertain economic future.[1]",
+        "A repository for prompts reported that over 2,000 public prompts for around 170 datasets were available in February 2022.[10] In 2022, the chain-of-thought prompting technique was proposed by Google researchers.[11][12] In 2023, several text-to-text and text-to-image prompt databases were made publicly available.[13][14] The Personalized Image-Prompt (PIP) dataset, a generated image-text dataset that has been categorized by 3,115 users, has also been made available publicly in 2024.[15]",
+        "Multiple distinct prompt engineering techniques have been published.",
+        "According to Google Research, chain-of-thought (CoT) prompting is a technique that allows large language models (LLMs) to solve a problem as a series of intermediate steps before giving a final answer. In 2022, Google Brain reported that chain-of-thought prompting improves reasoning ability by inducing the model to answer a multi-step problem with steps of reasoning that mimic a train of thought.[11][16] Chain-of-thought techniques were developed to help LLMs handle multi-step reasoning tasks, such as arithmetic or commonsense reasoning questions.[17][18]",
+        "For example, given the question, \"Q: The cafeteria had 23 apples. If they used 20 to make lunch and bought 6 more, how many apples do they have?\", Google claims that a CoT prompt might induce the LLM to answer \"A: The cafeteria had 23 apples originally. They used 20 to make lunch. So they had 23 - 20 = 3. They bought 6 more apples, so they have 3 + 6 = 9. The answer is 9.\"[11] When applied to PaLM, a 540 billion parameter language model, according to Google, CoT prompting significantly aided the model, allowing it to perform comparably with task-specific fine-tuned models on several tasks, achieving state-of-the-art results at the time on the GSM8K mathematical reasoning benchmark.[11] It is possible to fine-tune models on CoT reasoning datasets to enhance this capability further and stimulate better interpretability.[19][20]",
+        "An example of a CoT prompting:[21]",
+        "As originally proposed by Google,[11] each CoT prompt included a few Q&A examples. This made it a few-shot prompting technique. However, according to researchers at Google and the University of Tokyo, simply appending the words \"Let's think step-by-step\",[21] has also proven effective, which makes CoT a zero-shot prompting technique. OpenAI claims that this prompt allows for better scaling as a user no longer needs to formulate many specific CoT Q&A examples.[22]",
+        "In-context learning, refers to a model's ability to temporarily learn from prompts. For example, a prompt may include a few examples for a model to learn from, such as asking the model to complete \"maison → house, chat → cat, chien →\" (the expected response being dog),[23] an approach called few-shot learning.[24]",
+        "In-context learning is an emergent ability[25] of large language models. It is an emergent property of model scale, meaning that breaks[26] in downstream scaling laws occur, leading to its efficacy increasing at a different rate in larger models than in smaller models.[27][11] Unlike training and fine-tuning, which produce lasting changes, in-context learning is temporary.[28] Training models to perform in-context learning can be viewed as a form of meta-learning, or \"learning to learn\".[29]",
+        "Self-consistency decoding[30] performs several chain-of-thought rollouts, then selects the most commonly reached conclusion out of all the rollouts. If the rollouts disagree by a lot, a human can be queried for the correct chain of thought.[31]",
+        "Tree-of-thought prompting generalizes chain-of-thought by prompting the model to generate one or more \"possible next steps\", and then running the model on each of the possible next steps by breadth-first, beam, or some other method of tree search.[32] The LLM has additional modules that can converse the history of the problem-solving process to the LLM, which allows the system to 'backtrack steps' the problem-solving process.",
+        "By default, the output of language models may not contain estimates of uncertainty. The model may output text that appears confident, though the underlying token predictions have low likelihood scores. Large language models like GPT-4 can have accurately calibrated likelihood scores in their token predictions,[33] and so the model output uncertainty can be directly estimated by reading out the token prediction likelihood scores.",
+        "Research consistently demonstrates that LLMs are highly sensitive to subtle variations in prompt formatting, structure, and linguistic properties. Some studies have shown up to 76 accuracy points across formatting changes in few-shot settings.[34] Linguistic features significantly influence prompt effectiveness—such as morphology, syntax, and lexico-semantic changes—which meaningfully enhance task performance across a variety of tasks.[3][35] Clausal syntax, for example, improves consistency and reduces uncertainty in knowledge retrieval.[36] This sensitivity persists even with larger model sizes, additional few-shot examples, or instruction tuning.",
+        "To address sensitivity of models and make them more robust, several methods have been proposed. FormatSpread facilitates systematic analysis by evaluating a range of plausible prompt formats, offering a more comprehensive performance interval.[34] Similarly, PromptEval estimates performance distributions across diverse prompts, enabling robust metrics such as performance quantiles and accurate evaluations under constrained budgets.[37]",
+        "Retrieval-augmented generation (RAG) is a two-phase process involving document retrieval and answer generation by a large language model. The initial phase uses dense embeddings to retrieve documents. This retrieval can be based on a variety of database formats depending on the use case, such as a vector database, summary index, tree index, or keyword table index.[38] In response to a query, a document retriever selects the most relevant documents. This relevance is typically determined by first encoding both the query and the documents into vectors, then identifying documents whose vectors are closest in Euclidean distance to the query vector. Following document retrieval, the LLM generates an output that incorporates information from both the query and the retrieved documents.[39] RAG can also be used as a few-shot learner.",
+        "GraphRAG[40] (coined by Microsoft Research) is a technique that extends RAG with the use of a knowledge graph (usually, LLM-generated) to allow the model to connect disparate pieces of information, synthesize insights, and holistically understand summarized semantic concepts over large data collections. It was shown to be effective on datasets like the Violent Incident Information from News Articles (VIINA).[41]",
+        "Earlier work showed the effectiveness of using a knowledge graph for question answering using text-to-query generation.[42] These techniques can be combined to search across both unstructured and structured data, providing expanded context, and improved ranking.",
+        "Large language models (LLM) themselves can be used to compose prompts for large language models.[43] The automatic prompt engineer algorithm uses one LLM to beam search over prompts for another LLM:[44][45]",
+        "CoT examples can be generated by LLM themselves. In \"auto-CoT\",[46] a library of questions are converted to vectors by a model such as BERT. The question vectors are clustered. Questions nearest to the centroids of each cluster are selected. An LLM does zero-shot CoT on each question. The resulting CoT examples are added to the dataset. When prompted with a new question, CoT examples to the nearest questions can be retrieved and added to the prompt.",
+        "In 2022, text-to-image models like DALL-E 2, Stable Diffusion, and Midjourney were released to the public.[47] These models take text prompts as input and use them to generate AI-generated images. Text-to-image models typically do not understand grammar and sentence structure in the same way as large language models,[48] thus may require a different set of prompting techniques.",
+        "Text-to-image models do not natively understand negation. The prompt \"a party with no cake\" is likely to produce an image including a cake.[48] As an alternative, negative prompts allow a user to indicate, in a separate prompt, which terms should not appear in the resulting image.[49] Techniques such as framing the normal prompt into a sequence-to-sequence language modeling problem can be used to automatically generate an output for the negative prompt.[50]",
+        "A text-to-image prompt commonly includes a description of the subject of the art, the desired medium (such as digital painting or photography), style (such as hyperrealistic or pop-art), lighting (such as rim lighting or crepuscular rays), color, and texture.[51] Word order also affects the output of a text-to-image prompt. Words closer to the start of a prompt may be emphasized more heavily.[6]",
+        "The Midjourney documentation encourages short, descriptive prompts: instead of \"Show me a picture of lots of blooming California poppies, make them bright, vibrant orange, and draw them in an illustrated style with colored pencils\", an effective prompt might be \"Bright orange California poppies drawn with colored pencils\".[48]",
+        "Some text-to-image models are capable of imitating the style of particular artists by name. For example, the phrase in the style of Greg Rutkowski has been used in Stable Diffusion and Midjourney prompts to generate images in the distinctive style of Polish digital artist Greg Rutkowski.[52] Famous artists such as Vincent van Gogh and Salvador Dalí have also been used for styling and testing.[53]",
+        "Some approaches augment or replace natural language text prompts with non-text input.",
+        "For text-to-image models, textual inversion[54] performs an optimization process to create a new word embedding based on a set of example images. This embedding vector acts as a \"pseudo-word\" which can be included in a prompt to express the content or style of the examples.",
+        "In 2023, Meta's AI research released Segment Anything, a computer vision model that can perform image segmentation by prompting. As an alternative to text prompts, Segment Anything can accept bounding boxes, segmentation masks, and foreground/background points.[55]",
+        "In \"prefix-tuning\",[56] \"prompt tuning\", or \"soft prompting\",[57] floating-point-valued vectors are searched directly by gradient descent to maximize the log-likelihood on outputs.",
+        "Formally, let \n  \n    \n      \n        \n          E\n        \n        =\n        {\n        \n          \n            e\n            \n              1\n            \n          \n        \n        ,\n        …\n        ,\n        \n          \n            e\n            \n              k\n            \n          \n        \n        }\n      \n    \n    {\\displaystyle \\mathbf {E} =\\{\\mathbf {e_{1}} ,\\dots ,\\mathbf {e_{k}} \\}}\n  \n be a set of soft prompt tokens (tunable embeddings), while \n  \n    \n      \n        \n          X\n        \n        =\n        {\n        \n          \n            x\n            \n              1\n            \n          \n        \n        ,\n        …\n        ,\n        \n          \n            x\n            \n              m\n            \n          \n        \n        }\n      \n    \n    {\\displaystyle \\mathbf {X} =\\{\\mathbf {x_{1}} ,\\dots ,\\mathbf {x_{m}} \\}}\n  \n and \n  \n    \n      \n        \n          Y\n        \n        =\n        {\n        \n          \n            y\n            \n              1\n            \n          \n        \n        ,\n        …\n        ,\n        \n          \n            y\n            \n              n\n            \n          \n        \n        }\n      \n    \n    {\\displaystyle \\mathbf {Y} =\\{\\mathbf {y_{1}} ,\\dots ,\\mathbf {y_{n}} \\}}\n  \n be the token embeddings of the input and output respectively. During training, the tunable embeddings, input, and output tokens are concatenated into a single sequence \n  \n    \n      \n        \n          concat\n        \n        (\n        \n          E\n        \n        ;\n        \n          X\n        \n        ;\n        \n          Y\n        \n        )\n      \n    \n    {\\displaystyle {\\text{concat}}(\\mathbf {E} ;\\mathbf {X} ;\\mathbf {Y} )}\n  \n, and fed to the LLMs. The losses are computed over the \n  \n    \n      \n        \n          Y\n        \n      \n    \n    {\\displaystyle \\mathbf {Y} }\n  \n tokens; the gradients are backpropagated to prompt-specific parameters: in prefix-tuning, they are parameters associated with the prompt tokens at each layer; in prompt tuning, they are merely the soft tokens added to the vocabulary.[58]",
+        "More formally, this is prompt tuning. Let an LLM be written as \n  \n    \n      \n        L\n        L\n        M\n        (\n        X\n        )\n        =\n        F\n        (\n        E\n        (\n        X\n        )\n        )\n      \n    \n    {\\displaystyle LLM(X)=F(E(X))}\n  \n, where \n  \n    \n      \n        X\n      \n    \n    {\\displaystyle X}\n  \n is a sequence of linguistic tokens, \n  \n    \n      \n        E\n      \n    \n    {\\displaystyle E}\n  \n is the token-to-vector function, and \n  \n    \n      \n        F\n      \n    \n    {\\displaystyle F}\n  \n is the rest of the model. In prefix-tuning, one provides a set of input-output pairs \n  \n    \n      \n        {\n        (\n        \n          X\n          \n            i\n          \n        \n        ,\n        \n          Y\n          \n            i\n          \n        \n        )\n        \n          }\n          \n            i\n          \n        \n      \n    \n    {\\displaystyle \\{(X^{i},Y^{i})\\}_{i}}\n  \n, and then use gradient descent to search for \n  \n    \n      \n        arg\n        ⁡\n        \n          max\n          \n            \n              \n                Z\n                ~\n              \n            \n          \n        \n        \n          ∑\n          \n            i\n          \n        \n        log\n        ⁡\n        P\n        r\n        [\n        \n          Y\n          \n            i\n          \n        \n        \n          |\n        \n        \n          \n            \n              Z\n              ~\n            \n          \n        \n        ∗\n        E\n        (\n        \n          X\n          \n            i\n          \n        \n        )\n        ]\n      \n    \n    {\\displaystyle \\arg \\max _{\\tilde {Z}}\\sum _{i}\\log Pr[Y^{i}|{\\tilde {Z}}\\ast E(X^{i})]}\n  \n. In words, \n  \n    \n      \n        log\n        ⁡\n        P\n        r\n        [\n        \n          Y\n          \n            i\n          \n        \n        \n          |\n        \n        \n          \n            \n              Z\n              ~\n            \n          \n        \n        ∗\n        E\n        (\n        \n          X\n          \n            i\n          \n        \n        )\n        ]\n      \n    \n    {\\displaystyle \\log Pr[Y^{i}|{\\tilde {Z}}\\ast E(X^{i})]}\n  \n is the log-likelihood of outputting \n  \n    \n      \n        \n          Y\n          \n            i\n          \n        \n      \n    \n    {\\displaystyle Y^{i}}\n  \n, if the model first encodes the input \n  \n    \n      \n        \n          X\n          \n            i\n          \n        \n      \n    \n    {\\displaystyle X^{i}}\n  \n into the vector \n  \n    \n      \n        E\n        (\n        \n          X\n          \n            i\n          \n        \n        )\n      \n    \n    {\\displaystyle E(X^{i})}\n  \n, then prepend the vector with the \"prefix vector\" \n  \n    \n      \n        \n          \n            \n              Z\n              ~\n            \n          \n        \n      \n    \n    {\\displaystyle {\\tilde {Z}}}\n  \n, then apply \n  \n    \n      \n        F\n      \n    \n    {\\displaystyle F}\n  \n.",
+        "For prefix tuning, it is similar, but the \"prefix vector\" \n  \n    \n      \n        \n          \n            \n              Z\n              ~\n            \n          \n        \n      \n    \n    {\\displaystyle {\\tilde {Z}}}\n  \n is pre-appended to the hidden states in every layer of the model.",
+        "An earlier result[59] uses the same idea of gradient descent search, but is designed for masked language models like BERT, and searches only over token sequences, rather than numerical vectors. Formally, it searches for \n  \n    \n      \n        arg\n        ⁡\n        \n          max\n          \n            \n              \n                X\n                ~\n              \n            \n          \n        \n        \n          ∑\n          \n            i\n          \n        \n        log\n        ⁡\n        P\n        r\n        [\n        \n          Y\n          \n            i\n          \n        \n        \n          |\n        \n        \n          \n            \n              X\n              ~\n            \n          \n        \n        ∗\n        \n          X\n          \n            i\n          \n        \n        ]\n      \n    \n    {\\displaystyle \\arg \\max _{\\tilde {X}}\\sum _{i}\\log Pr[Y^{i}|{\\tilde {X}}\\ast X^{i}]}\n  \n where \n  \n    \n      \n        \n          \n            \n              X\n              ~\n            \n          \n        \n      \n    \n    {\\displaystyle {\\tilde {X}}}\n  \n is ranges over token sequences of a specified length.",
+        "Prompt injection is a family of related computer security exploits carried out by getting a machine learning model (such as an LLM) which was trained to follow human-given instructions to follow instructions provided by a malicious user. This stands in contrast to the intended operation of instruction-following systems, wherein the ML model is intended only to follow trusted instructions (prompts) provided by the ML model's operator.[60][61][62]"
+      ],
+      "codeBlocks": [
+        {
+          "code": "Q: {question}\n   A: Let's think step by step.",
+          "language": "plaintext"
+        }
+      ],
+      "images": [
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Text_document_with_red_question_mark.svg/40px-Text_document_with_red_question_mark.svg.png"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/RAG_schema.svg/220px-RAG_schema.svg.png",
+          "caption": "Two-phase process of document retrieval using dense embeddings and LLM for answer formulation"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/GraphRAG.svg/220px-GraphRAG.svg.png",
+          "caption": "GraphRAG with a knowledge graph combining access patterns for unstructured, structured, and mixed data"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Fooocus_2.5.5_screenshot_showing_the_prompt_section.webp/260px-Fooocus_2.5.5_screenshot_showing_the_prompt_section.webp.png",
+          "caption": "Example of prompt engineering for text-to-image generation, with Fooocus"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Algorithmically-generated_landscape_artwork_of_forest_with_Shinto_shrine.png/188px-Algorithmically-generated_landscape_artwork_of_forest_with_Shinto_shrine.png"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Algorithmically-generated_landscape_artwork_of_forest_with_Shinto_shrine_using_negative_prompt_for_green_trees.png/188px-Algorithmically-generated_landscape_artwork_of_forest_with_Shinto_shrine_using_negative_prompt_for_green_trees.png"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Algorithmically-generated_landscape_artwork_of_forest_with_Shinto_shrine_using_negative_prompt_for_round_stones.png/188px-Algorithmically-generated_landscape_artwork_of_forest_with_Shinto_shrine_using_negative_prompt_for_round_stones.png"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/db80891fa2c15f9aa6f17b961da74297084ddb0d",
+          "alt": "{\\displaystyle \\mathbf {E} =\\{\\mathbf {e_{1}} ,\\dots ,\\mathbf {e_{k}} \\}}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/c61a221068a7874c88996749fa74f95662e208e9",
+          "alt": "{\\displaystyle \\mathbf {X} =\\{\\mathbf {x_{1}} ,\\dots ,\\mathbf {x_{m}} \\}}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/9ab1ea42dd126a491cc5ad04431d28cafed732cd",
+          "alt": "{\\displaystyle \\mathbf {Y} =\\{\\mathbf {y_{1}} ,\\dots ,\\mathbf {y_{n}} \\}}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/137b7fb5b04a98eb21d19b6620c9683b5dd7efa6",
+          "alt": "{\\displaystyle {\\text{concat}}(\\mathbf {E} ;\\mathbf {X} ;\\mathbf {Y} )}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/c92a7716a99fadda050469747fce1e475e0ec549",
+          "alt": "{\\displaystyle \\mathbf {Y} }"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/59bfec66ca96531a2cb71cd0da8b94109128a27b",
+          "alt": "{\\displaystyle LLM(X)=F(E(X))}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/68baa052181f707c662844a465bfeeb135e82bab",
+          "alt": "{\\displaystyle X}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/4232c9de2ee3eec0a9c0a19b15ab92daa6223f9b",
+          "alt": "{\\displaystyle E}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/545fd099af8541605f7ee55f08225526be88ce57",
+          "alt": "{\\displaystyle F}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/c392a35f0a5ab3c7618068c7f5f48702ceea2284",
+          "alt": "{\\displaystyle \\{(X^{i},Y^{i})\\}_{i}}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/b4358392245c726b7d928216ce67ada64d5d498d",
+          "alt": "{\\displaystyle \\arg \\max _{\\tilde {Z}}\\sum _{i}\\log Pr[Y^{i}|{\\tilde {Z}}\\ast E(X^{i})]}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/476998e3da7bc075c95c878e97bf6a9833b5eca8",
+          "alt": "{\\displaystyle \\log Pr[Y^{i}|{\\tilde {Z}}\\ast E(X^{i})]}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/aa8587d2e6e6da1096b6d4e0c41a0b34154fbb1f",
+          "alt": "{\\displaystyle Y^{i}}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/1ee700b37109a25ac72a3d5587c3b8a78b149c03",
+          "alt": "{\\displaystyle X^{i}}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/ce679e61379ef5d4f143206cf8c491384fb01696",
+          "alt": "{\\displaystyle E(X^{i})}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/f80bb1b43cbb95654efc0551e73b3aef1723f818",
+          "alt": "{\\displaystyle {\\tilde {Z}}}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/545fd099af8541605f7ee55f08225526be88ce57",
+          "alt": "{\\displaystyle F}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/f80bb1b43cbb95654efc0551e73b3aef1723f818",
+          "alt": "{\\displaystyle {\\tilde {Z}}}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/509fdae894cf55cb077193129b5f8190d006978a",
+          "alt": "{\\displaystyle \\arg \\max _{\\tilde {X}}\\sum _{i}\\log Pr[Y^{i}|{\\tilde {X}}\\ast X^{i}]}"
+        },
+        {
+          "url": "https://wikimedia.org/api/rest_v1/media/math/render/svg/19b6c2d2aa76b9cf010d897dc2ce988acf539624",
+          "alt": "{\\displaystyle {\\tilde {X}}}"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Scholia_logo.svg/40px-Scholia_logo.svg.png"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/16px-Symbol_category_class.svg.png"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Commons-logo.svg/12px-Commons-logo.svg.png"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/e2/Symbol_portal_class.svg/16px-Symbol_portal_class.svg.png"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Symbol_category_class.svg/16px-Symbol_category_class.svg.png"
+        },
+        {
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/db/Symbol_list_class.svg/16px-Symbol_list_class.svg.png"
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "difficulty": "beginner",
+    "topics": [
+      "prompt engineering",
+      "overview",
+      "history"
+    ],
+    "estimatedReadTime": 29,
+    "dateScraped": "2025-02-27T13:33:22.827Z"
+  }
+}

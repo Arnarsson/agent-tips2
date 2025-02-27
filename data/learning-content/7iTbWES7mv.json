@@ -1,0 +1,22 @@
+{
+  "title": "Home - Anthropic",
+  "url": "https://docs.anthropic.com/claude/docs/structured-output",
+  "sourceName": "docs.anthropic.com",
+  "sourceUrl": "https://docs.anthropic.com",
+  "content": [],
+  "metadata": {
+    "difficulty": "intermediate",
+    "topics": [
+      "structured output",
+      "JSON",
+      "XML",
+      "formatting"
+    ],
+    "estimatedReadTime": 1,
+    "dateScraped": "2025-02-27T13:33:18.305Z"
+  },
+  "id": "7iTbWES7mv",
+  "slug": "home-anthropic",
+  "examples": [],
+  "exercises": []
+}

@@ -1,0 +1,156 @@
+{
+  "title": "Transformers LLM prompting guide",
+  "url": "https://huggingface.co/docs/transformers/main/tasks/prompting",
+  "sourceName": "Hugging Face",
+  "sourceUrl": "https://huggingface.co",
+  "content": [
+    {
+      "heading": "Types of models",
+      "paragraphs": [
+        "The majority of modern LLMs are decoder-only transformers. Some examples include: LLaMA,\nLlama2, Falcon, GPT2. However, you may encounter\nencoder-decoder transformer LLMs as well, for instance, Flan-T5 and BART.",
+        "Encoder-decoder-style models are typically used in generative tasks where the output heavily relies on the input, for\nexample, in translation and summarization. The decoder-only models are used for all other types of generative tasks.",
+        "When using a pipeline to generate text with an LLM, it’s important to know what type of LLM you are using, because\nthey use different pipelines.",
+        "Run inference with decoder-only models with the text-generation pipeline:",
+        "To run inference with an encoder-decoder, use the text2text-generation pipeline:"
+      ]
+    },
+    {
+      "heading": "Base vs instruct/chat models",
+      "paragraphs": [
+        "Most of the recent LLM checkpoints available on 🤗 Hub come in two versions: base and instruct (or chat). For example,\ntiiuae/falcon-7b and tiiuae/falcon-7b-instruct.",
+        "Base models are excellent at completing the text when given an initial prompt, however, they are not ideal for NLP tasks\nwhere they need to follow instructions, or for conversational use. This is where the instruct (chat) versions come in.\nThese checkpoints are the result of further fine-tuning of the pre-trained base versions on instructions and conversational data.\nThis additional fine-tuning makes them a better choice for many NLP tasks.",
+        "Let’s illustrate some simple prompts that you can use with tiiuae/falcon-7b-instruct\nto solve some common NLP tasks."
+      ]
+    },
+    {
+      "heading": "NLP tasks",
+      "paragraphs": [
+        "First, let’s set up the environment:",
+        "Next, let’s load the model with the appropriate pipeline (\"text-generation\"):",
+        "Note that Falcon models were trained using the bfloat16 datatype, so we recommend you use the same. This requires a recent\nversion of CUDA and works best on modern cards.",
+        "Now that we have the model loaded via the pipeline, let’s explore how you can use prompts to solve NLP tasks.",
+        "One of the most common forms of text classification is sentiment analysis, which assigns a label like “positive”, “negative”,\nor “neutral” to a sequence of text. Let’s write a prompt that instructs the model to classify a given text (a movie review).\nWe’ll start by giving the instruction, and then specifying the text to classify. Note that instead of leaving it at that, we’re\nalso adding the beginning of the response - \"Sentiment: \":",
+        "As a result, the output contains a classification label from the list we have provided in the instructions, and it is a correct one!",
+        "You may notice that in addition to the prompt, we pass a max_new_tokens parameter. It controls the number of tokens the\nmodel shall generate, and it is one of the many text generation parameters that you can learn about\nin Text generation strategies guide.",
+        "Named Entity Recognition (NER) is a task of finding named entities in a piece of text, such as a person, location, or organization.\nLet’s modify the instructions in the prompt to make the LLM perform this task. Here, let’s also set return_full_text = False\nso that output doesn’t contain the prompt:",
+        "As you can see, the model correctly identified two named entities from the given text.",
+        "Another task LLMs can perform is translation. You can choose to use encoder-decoder models for this task, however, here,\nfor the simplicity of the examples, we’ll keep using Falcon-7b-instruct, which does a decent job. Once again, here’s how\nyou can write a basic prompt to instruct a model to translate a piece of text from English to Italian:",
+        "Here we’ve added a do_sample=True and top_k=10 to allow the model to be a bit more flexible when generating output.",
+        "Similar to the translation, text summarization is another generative task where the output heavily relies on the input,\nand encoder-decoder models can be a better choice. However, decoder-style models can be used for this task as well.\nPreviously, we have placed the instructions at the very beginning of the prompt. However, the very end of the prompt can\nalso be a suitable location for instructions. Typically, it’s better to place the instruction on one of the extreme ends.",
+        "For question answering task we can structure the prompt into the following logical components: instructions, context, question, and\nthe leading word or phrase (\"Answer:\") to nudge the model to start generating the answer:",
+        "Reasoning is one of the most difficult tasks for LLMs, and achieving good results often requires applying advanced prompting techniques, like\nChain-of-thought.",
+        "Let’s try if we can make a model reason about a simple arithmetics task with a basic prompt:",
+        "Correct! Let’s increase the complexity a little and see if we can still get away with a basic prompt:",
+        "This is a wrong answer, it should be 12. In this case, this can be due to the prompt being too basic, or due to the choice\nof model, after all we’ve picked the smallest version of Falcon. Reasoning is difficult for models of all sizes, but larger\nmodels are likely to perform better."
+      ]
+    },
+    {
+      "heading": "Best practices of LLM prompting",
+      "paragraphs": [
+        "In this section of the guide we have compiled a list of best practices that tend to improve the prompt results:"
+      ]
+    },
+    {
+      "heading": "Few-shot prompting",
+      "paragraphs": [
+        "The basic prompts in the sections above are the examples of “zero-shot” prompts, meaning, the model has been given\ninstructions and context, but no examples with solutions. LLMs that have been fine-tuned on instruction datasets, generally\nperform well on such “zero-shot” tasks. However, you may find that your task has more complexity or nuance, and, perhaps,\nyou have some requirements for the output that the model doesn’t catch on just from the instructions. In this case, you can\ntry the technique called few-shot prompting.",
+        "In few-shot prompting, we provide examples in the prompt giving the model more context to improve the performance.\nThe examples condition the model to generate the output following the patterns in the examples.",
+        "Here’s an example:",
+        "In the above code snippet we used a single example to demonstrate the desired output to the model, so this can be called a\n“one-shot” prompting. However, depending on the task complexity you may need to use more than one example.",
+        "Limitations of the few-shot prompting technique:"
+      ]
+    },
+    {
+      "heading": "Chain-of-thought",
+      "paragraphs": [
+        "Chain-of-thought (CoT) prompting is a technique that nudges a model to produce intermediate reasoning steps thus improving\nthe results on complex reasoning tasks.",
+        "There are two ways of steering a model to producing the reasoning steps:",
+        "If we apply the CoT technique to the muffins example from the reasoning section and use a larger model,\nsuch as (tiiuae/falcon-180B-chat) which you can play with in the HuggingChat,\nwe’ll get a significant improvement on the reasoning result:"
+      ]
+    },
+    {
+      "heading": "Prompting vs fine-tuning",
+      "paragraphs": [
+        "You can achieve great results by optimizing your prompts, however, you may still ponder whether fine-tuning a model\nwould work better for your case. Here are some scenarios when fine-tuning a smaller model may be a preferred option:",
+        "In all of the above examples, you will need to make sure that you either already have or can easily obtain a large enough\ndomain-specific dataset at a reasonable cost to fine-tune a model. You will also need to have enough time and resources\nto fine-tune a model.",
+        "If the above examples are not the case for you, optimizing prompts can prove to be more beneficial."
+      ]
+    }
+  ],
+  "metadata": {
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "chain-of-thought",
+      "classification",
+      "optimization",
+      "prompting",
+      "tasks",
+      "hugging face"
+    ],
+    "estimatedReadTime": 6,
+    "dateScraped": "2025-02-27T13:31:11.003Z"
+  },
+  "id": "zGKKg5UwKi",
+  "slug": "transformers-llm-prompting-guide",
+  "examples": [],
+  "exercises": [
+    {
+      "id": "ahGEVLPRX1",
+      "title": "Multiple Choice: Types of models",
+      "description": "Select the most appropriate option for this prompt engineering scenario.",
+      "type": "multiple-choice",
+      "question": "Which of the following is the most effective prompt?",
+      "options": [
+        "pipelines different use because\nthey using, are you LLM of type what know to important it’s LLM, an with text generate to pipeline a using When",
+        "pipelines different use because\nthey using, are you LLM of type what know to important it’s LLM, an with text generate to pipeline a using When",
+        "When using a pipeline to generate text with an LLM, it’s important to know what type of LLM you are using, because\nthey use different pipelines",
+        "pipelines different use because\nthey using, are you LLM of type what know to important it’s LLM, an with text generate to pipeline a using When"
+      ],
+      "correctAnswer": "When using a pipeline to generate text with an LLM, it’s important to know what type of LLM you are using, because\nthey use different pipelines"
+    },
+    {
+      "id": "yYVu0GivB4",
+      "title": "Fill in the Blank: NLP tasks",
+      "description": "Complete the prompt by filling in the blank with the most appropriate term.",
+      "type": "fill-in-the-blank",
+      "question": "_______ Let’s increase the complexity a little and see if we can still get away with a basic prompt:",
+      "correctAnswer": "Correct!",
+      "hints": [
+        "Consider the context of the prompt",
+        "Think about what would make the AI response most effective"
+      ]
+    },
+    {
+      "id": "XKTbRDSpX3",
+      "title": "Fill in the Blank: Chain-of-thought",
+      "description": "Complete the prompt by filling in the blank with the most appropriate term.",
+      "type": "fill-in-the-blank",
+      "question": "_______ (CoT) prompting is a technique that nudges a model to produce intermediate reasoning steps thus improving\nthe results on complex reasoning tasks.",
+      "correctAnswer": "Chain-of-thought",
+      "hints": [
+        "Consider the context of the prompt",
+        "Think about what would make the AI response most effective"
+      ]
+    },
+    {
+      "id": "UpVhIFxVO0",
+      "title": "Multiple Choice: Prompting vs fine-tuning",
+      "description": "Select the most appropriate option for this prompt engineering scenario.",
+      "type": "multiple-choice",
+      "question": "Which of the following is the most effective prompt?",
+      "options": [
+        "You will also need to have enough time and resources\nto fine-tune a model",
+        "You will also practically need to have enough time and resources\nto fine-tune a model",
+        "You will also need practically to have enough time and resources\nto fine-tune a model",
+        "model a fine-tune resources\nto and time enough have to need also will You"
+      ],
+      "correctAnswer": "You will also need to have enough time and resources\nto fine-tune a model"
+    }
+  ]
+}

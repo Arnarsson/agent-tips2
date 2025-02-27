@@ -1,0 +1,785 @@
+[
+  {
+    "id": "071xAwiGsA",
+    "title": "Chain-of-Thought Prompting | Prompt Engineering Guide<!-- --> GitHubDiscord",
+    "slug": "chainofthought-prompting-prompt-engineering-guide-githubdiscord",
+    "difficulty": "intermediate",
+    "topics": [
+      "chain of thought",
+      "reasoning",
+      "problem solving"
+    ],
+    "sourceUrl": "https://www.promptingguide.ai",
+    "sourceName": "www.promptingguide.ai",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "3zswsOB3Nr",
+    "title": "Prompt engineering - Wikipedia",
+    "slug": "prompt-engineering-wikipedia",
+    "difficulty": "beginner",
+    "topics": [
+      "prompt engineering",
+      "overview",
+      "history"
+    ],
+    "sourceUrl": "https://en.wikipedia.org",
+    "sourceName": "en.wikipedia.org",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "4SkV74nt6F",
+    "title": "Transformers Generation with LLMs",
+    "slug": "transformers-generation-with-llms",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "5FENGxzKyg",
+    "title": "Few-Shot Prompting | Prompt Engineering Guide<!-- --> GitHubDiscord",
+    "slug": "fewshot-prompting-prompt-engineering-guide-githubdiscord",
+    "difficulty": "intermediate",
+    "topics": [
+      "few-shot learning",
+      "techniques",
+      "examples"
+    ],
+    "sourceUrl": "https://www.promptingguide.ai",
+    "sourceName": "www.promptingguide.ai",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "6M3ePGGWCZ",
+    "title": "Transformers Optimizing LLMs for Speed and Memory",
+    "slug": "transformers-optimizing-llms-for-speed-and-memory",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 4
+  },
+  {
+    "id": "7iTbWES7mv",
+    "title": "Home - Anthropic",
+    "slug": "home-anthropic",
+    "difficulty": "intermediate",
+    "topics": [
+      "structured output",
+      "JSON",
+      "XML",
+      "formatting"
+    ],
+    "sourceUrl": "https://docs.anthropic.com",
+    "sourceName": "docs.anthropic.com",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "7zpvp3SGn3",
+    "title": "Few-Shot Prompting | Prompt Engineering Guide<!-- --> GitHubDiscord",
+    "slug": "fewshot-prompting-prompt-engineering-guide-githubdiscord",
+    "difficulty": "intermediate",
+    "topics": [
+      "few-shot learning",
+      "techniques",
+      "examples"
+    ],
+    "sourceUrl": "https://www.promptingguide.ai",
+    "sourceName": "www.promptingguide.ai",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "9FmtkBVyBW",
+    "title": "Optimizing LLMs for Speed and Memory",
+    "slug": "optimizing-llms-for-speed-and-memory",
+    "difficulty": "beginner",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "9OKtBcPp4o",
+    "title": "Transformers Optimizing LLMs for Speed and Memory",
+    "slug": "transformers-optimizing-llms-for-speed-and-memory",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 5
+  },
+  {
+    "id": "9eGBfgG5t0",
+    "title": "Transformers Generation with LLMs",
+    "slug": "transformers-generation-with-llms",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "9jTkalbG5n",
+    "title": "Transformers Optimizing LLMs for Speed and Memory",
+    "slug": "transformers-optimizing-llms-for-speed-and-memory",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 3
+  },
+  {
+    "id": "9yntiloLHX",
+    "title": "Transformers Optimizing LLMs for Speed and Memory",
+    "slug": "transformers-optimizing-llms-for-speed-and-memory",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 4
+  },
+  {
+    "id": "DT5jQRn7SG",
+    "title": "Chain-of-Thought Prompting | Prompt Engineering Guide<!-- --> GitHubDiscord",
+    "slug": "chainofthought-prompting-prompt-engineering-guide-githubdiscord",
+    "difficulty": "intermediate",
+    "topics": [
+      "chain of thought",
+      "reasoning",
+      "problem solving"
+    ],
+    "sourceUrl": "https://www.promptingguide.ai",
+    "sourceName": "www.promptingguide.ai",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "EINwYO2tcH",
+    "title": "Zero-Shot Classification",
+    "slug": "zeroshot-classification",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "classification",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "EYojror9jx",
+    "title": "Zero-Shot Classification",
+    "slug": "zeroshot-classification",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "classification",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "Ebtd9cPsTd",
+    "title": "Transformers LLM prompting guide",
+    "slug": "transformers-llm-prompting-guide",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "chain-of-thought",
+      "classification",
+      "optimization",
+      "prompting",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 4
+  },
+  {
+    "id": "GiwnMda13L",
+    "title": "Transformers Generation with LLMs",
+    "slug": "transformers-generation-with-llms",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "Hgx7fb2NRk",
+    "title": "Transformers LLM prompting guide",
+    "slug": "transformers-llm-prompting-guide",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "chain-of-thought",
+      "classification",
+      "optimization",
+      "prompting",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 4
+  },
+  {
+    "id": "IVKexd9ew6",
+    "title": "Basics of Prompting | Prompt Engineering Guide<!-- --> GitHubDiscord",
+    "slug": "basics-of-prompting-prompt-engineering-guide-githubdiscord",
+    "difficulty": "beginner",
+    "topics": [
+      "basics",
+      "introduction",
+      "fundamentals"
+    ],
+    "sourceUrl": "https://www.promptingguide.ai",
+    "sourceName": "www.promptingguide.ai",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "LU7fdy8AfG",
+    "title": "Optimizing LLMs for Speed and Memory",
+    "slug": "optimizing-llms-for-speed-and-memory",
+    "difficulty": "beginner",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "NfNwBFrmxr",
+    "title": "LLM prompting guide",
+    "slug": "llm-prompting-guide",
+    "difficulty": "beginner",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "OnSqWP9xUP",
+    "title": "Zero-Shot Classification",
+    "slug": "zeroshot-classification",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "classification",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "OpVf7lZ7Ys",
+    "title": "Zero-Shot Classification",
+    "slug": "zeroshot-classification",
+    "difficulty": "intermediate",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 2
+  },
+  {
+    "id": "P5gtwMBj3o",
+    "title": "Generating Code | Prompt Engineering Guide<!-- --> GitHubDiscord",
+    "slug": "generating-code-prompt-engineering-guide-githubdiscord",
+    "difficulty": "advanced",
+    "topics": [
+      "code generation",
+      "programming",
+      "applications"
+    ],
+    "sourceUrl": "https://www.promptingguide.ai",
+    "sourceName": "www.promptingguide.ai",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "PaAbPBaR2h",
+    "title": "Home - Anthropic",
+    "slug": "home-anthropic",
+    "difficulty": "advanced",
+    "topics": [
+      "advanced prompting",
+      "system prompts",
+      "few-shot learning"
+    ],
+    "sourceUrl": "https://docs.anthropic.com",
+    "sourceName": "docs.anthropic.com",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "R1iVG9rCva",
+    "title": "Zero-Shot Classification",
+    "slug": "zeroshot-classification",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "classification",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "VMJMWksVxt",
+    "title": "Transformers LLM prompting guide",
+    "slug": "transformers-llm-prompting-guide",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "chain-of-thought",
+      "classification",
+      "optimization",
+      "prompting",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 4
+  },
+  {
+    "id": "WkObu8FYfi",
+    "title": "Generation with LLMs",
+    "slug": "generation-with-llms",
+    "difficulty": "beginner",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "Z2OJPk6dxg",
+    "title": "Transformers LLM prompting guide",
+    "slug": "transformers-llm-prompting-guide",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "chain-of-thought",
+      "classification",
+      "optimization",
+      "prompting",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 5
+  },
+  {
+    "id": "ZbvVsovO42",
+    "title": "Transformers Generation with LLMs",
+    "slug": "transformers-generation-with-llms",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "c9cWdzrMqE",
+    "title": "Transformers Optimizing LLMs for Speed and Memory",
+    "slug": "transformers-optimizing-llms-for-speed-and-memory",
+    "difficulty": "advanced",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 6
+  },
+  {
+    "id": "eYLtEUkuOA",
+    "title": "Transformers Optimizing LLMs for Speed and Memory",
+    "slug": "transformers-optimizing-llms-for-speed-and-memory",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 5
+  },
+  {
+    "id": "mXn1XjCCMR",
+    "title": "Transformers LLM prompting guide",
+    "slug": "transformers-llm-prompting-guide",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "chain-of-thought",
+      "classification",
+      "optimization",
+      "prompting",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 5
+  },
+  {
+    "id": "nXLvBqjgSn",
+    "title": "Transformers Generation with LLMs",
+    "slug": "transformers-generation-with-llms",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "puQ69ehrx2",
+    "title": "Transformers Optimizing LLMs for Speed and Memory",
+    "slug": "transformers-optimizing-llms-for-speed-and-memory",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 4
+  },
+  {
+    "id": "s7aaDzpG7t",
+    "title": "LLM prompting guide",
+    "slug": "llm-prompting-guide",
+    "difficulty": "beginner",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "saRdJoFNp8",
+    "title": "Transformers Generation with LLMs",
+    "slug": "transformers-generation-with-llms",
+    "difficulty": "advanced",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "tiYGGvLYap",
+    "title": "Zero-Shot Classification",
+    "slug": "zeroshot-classification",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "classification",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 2
+  },
+  {
+    "id": "uxjywNligi",
+    "title": "Home - Anthropic",
+    "slug": "home-anthropic",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "techniques",
+      "best practices"
+    ],
+    "sourceUrl": "https://docs.anthropic.com",
+    "sourceName": "docs.anthropic.com",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "v7c1oiHyTV",
+    "title": "Basics of Prompting | Prompt Engineering Guide<!-- --> GitHubDiscord",
+    "slug": "basics-of-prompting-prompt-engineering-guide-githubdiscord",
+    "difficulty": "beginner",
+    "topics": [
+      "basics",
+      "introduction",
+      "fundamentals"
+    ],
+    "sourceUrl": "https://www.promptingguide.ai",
+    "sourceName": "www.promptingguide.ai",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "vvTcvqGHTX",
+    "title": "Basics of Prompting | Prompt Engineering Guide<!-- --> GitHubDiscord",
+    "slug": "basics-of-prompting-prompt-engineering-guide-githubdiscord",
+    "difficulty": "beginner",
+    "topics": [
+      "basics",
+      "introduction",
+      "fundamentals"
+    ],
+    "sourceUrl": "https://www.promptingguide.ai",
+    "sourceName": "www.promptingguide.ai",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "xEnfqsRJe0",
+    "title": "Zero-Shot Classification",
+    "slug": "zeroshot-classification",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "classification",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "xf4u4RFv6L",
+    "title": "Transformers LLM prompting guide",
+    "slug": "transformers-llm-prompting-guide",
+    "difficulty": "intermediate",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 5
+  },
+  {
+    "id": "xk49E2immc",
+    "title": "Transformers Generation with LLMs",
+    "slug": "transformers-generation-with-llms",
+    "difficulty": "advanced",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "optimization",
+      "tutorials",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 1
+  },
+  {
+    "id": "xyQLRIovAC",
+    "title": "Generation with LLMs",
+    "slug": "generation-with-llms",
+    "difficulty": "beginner",
+    "topics": [],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 0
+  },
+  {
+    "id": "zGKKg5UwKi",
+    "title": "Transformers LLM prompting guide",
+    "slug": "transformers-llm-prompting-guide",
+    "difficulty": "intermediate",
+    "topics": [
+      "prompt engineering",
+      "transformers",
+      "llm",
+      "fine-tuning",
+      "zero-shot",
+      "few-shot",
+      "chain-of-thought",
+      "classification",
+      "optimization",
+      "prompting",
+      "tasks",
+      "hugging face"
+    ],
+    "sourceUrl": "https://huggingface.co",
+    "sourceName": "Hugging Face",
+    "examplesCount": 0,
+    "exercisesCount": 4
+  }
+]

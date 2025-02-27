@@ -109,3 +109,17 @@ export interface UserProgress {
   readGuides: string[]; // Array of guide IDs
   achievements: string[]; // Array of achievement IDs
 }
+
+export interface SavedPrompt {
+  id: string;
+  title: string;
+  content: string;
+  templateId?: string;
+  tags: string[];
+  createdAt: string;
+  updatedAt: string;
+  metrics?: {
+    qualityScore?: number;
+    usageCount?: number;
+  };
+}

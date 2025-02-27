@@ -1,0 +1,17 @@
+{
+  "title": "LLM prompting guide",
+  "url": "https://huggingface.co/docs/transformers/main/tasks/prompting",
+  "sourceName": "Hugging Face",
+  "sourceUrl": "https://huggingface.co",
+  "content": [],
+  "metadata": {
+    "difficulty": "beginner",
+    "topics": [],
+    "estimatedReadTime": 1,
+    "dateScraped": "2025-02-27T13:10:32.629Z"
+  },
+  "id": "s7aaDzpG7t",
+  "slug": "llm-prompting-guide",
+  "examples": [],
+  "exercises": []
+}
